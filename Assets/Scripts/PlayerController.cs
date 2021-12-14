@@ -37,24 +37,27 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        if(knockBackCounter <= 0)
+        if(!PauseMenu.instance.isPaused)
         {
-            Move();
-
-            Jump();
-
-            Flip();
-        }
-        else
-        {
-            knockBackCounter -= Time.deltaTime;
-            if(!playerSR.flipX)
+            if(knockBackCounter <= 0)
             {
-                playerRB2D.velocity = new Vector2(-knockBackForce, playerRB2D.velocity.y);
+                Move();
+
+                Jump();
+
+                Flip();
             }
             else
             {
-                playerRB2D.velocity = new Vector2(knockBackForce, playerRB2D.velocity.y);
+                knockBackCounter -= Time.deltaTime;
+                if(!playerSR.flipX)
+                {
+                    playerRB2D.velocity = new Vector2(-knockBackForce, playerRB2D.velocity.y);
+                }
+                else
+                {
+                    playerRB2D.velocity = new Vector2(knockBackForce, playerRB2D.velocity.y);
+                }
             }
         }
 
