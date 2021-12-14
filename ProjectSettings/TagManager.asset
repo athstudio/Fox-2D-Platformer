@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -12,7 +13,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Enemy
   - 
   - 
   - 
@@ -50,9 +51,12 @@ TagManager:
   - name: Level setup
     uniqueID: 1695664485
     locked: 0
+  - name: Effects
+    uniqueID: 3672344607
+    locked: 0
+  - name: PickUps
+    uniqueID: 898256769
+    locked: 0
   - name: PlayerEnemy
     uniqueID: 2588882079
-    locked: 0
-  - name: New Layer
-    uniqueID: 898256769
     locked: 0

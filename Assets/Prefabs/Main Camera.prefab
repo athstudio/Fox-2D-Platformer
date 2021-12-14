@@ -99,5 +99,5 @@ MonoBehaviour:
   target: {fileID: 0}
   farBG: {fileID: 0}
   middleBG: {fileID: 0}
-  minHeight: -1.5
+  minHeight: -1
   maxHeight: 2.5

@@ -21,6 +21,8 @@ public class PlayerController : MonoBehaviour
     public float knockBackLength, knockBackForce;
     private float knockBackCounter;
 
+    public float bounceForce;
+
     private void Awake() 
     {
         instance = this;
@@ -79,6 +81,7 @@ public class PlayerController : MonoBehaviour
             if(isGrouded)
             {
                 playerRB2D.velocity = new Vector2(playerRB2D.velocity.x, jumpForce);
+                AudioManager.instance.PlaySFX(10);
             }
             else 
             {
@@ -86,6 +89,7 @@ public class PlayerController : MonoBehaviour
                 {
                     playerRB2D.velocity = new Vector2(playerRB2D.velocity.x, jumpForce);
                     canDoubleJump = false;
+                    AudioManager.instance.PlaySFX(10);
                 }
             }
         }
@@ -117,4 +121,9 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isGrounded", isGrouded);
     }
 
+    public void Bounce()
+    {
+        playerRB2D.velocity = new Vector2(playerRB2D.velocity.x, bounceForce);
+        AudioManager.instance.PlaySFX(9);
+    }
 }

@@ -13,6 +13,8 @@ public class PlayerHealthController : MonoBehaviour
 
     private SpriteRenderer playerSR;
 
+    public GameObject deathEffect;
+
     private void Awake()
     {
         instance = this;
@@ -52,6 +54,8 @@ public class PlayerHealthController : MonoBehaviour
 
                 //gameObject.SetActive(false);
 
+                Instantiate(deathEffect, transform.position, transform.rotation);
+
                 LevelManager.instance.RespawnPlayer();
             }
             else
@@ -60,9 +64,33 @@ public class PlayerHealthController : MonoBehaviour
                 playerSR.color = new Color(playerSR.color.r, playerSR.color.g, playerSR.color.b, .5f);
 
                 PlayerController.instance.KnockBack();
+
+                AudioManager.instance.PlaySFX(9);
             }
 
             UIController.instance.UpdateHealthDisplay();
         }
+    }
+
+    public void HealPlayer()
+    {
+        currentHealth++;
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
+        UIController.instance.UpdateHealthDisplay();
+    }
+
+    public void HealPlayer_x2()
+    {
+        currentHealth = currentHealth + 4;
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+
+        UIController.instance.UpdateHealthDisplay();
     }
 }

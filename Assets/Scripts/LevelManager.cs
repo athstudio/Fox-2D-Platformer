@@ -8,6 +8,8 @@ public class LevelManager : MonoBehaviour
 
     public float waitToRespawn;
 
+    public int gemsCollected;
+
     private void Awake() 
     {
         instance = this;
@@ -33,6 +35,8 @@ public class LevelManager : MonoBehaviour
     private IEnumerator RespawnCo()
     {
         PlayerController.instance.gameObject.SetActive(false);
+
+        AudioManager.instance.PlaySFX(8);
 
         yield return new WaitForSeconds(waitToRespawn);
 
