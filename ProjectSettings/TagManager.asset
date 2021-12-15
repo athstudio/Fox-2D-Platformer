@@ -48,7 +48,10 @@ TagManager:
   - name: 'Middle '
     uniqueID: 3709656163
     locked: 0
-  - name: Level setup
+  - name: Decor
+    uniqueID: 1898883451
+    locked: 0
+  - name: World
     uniqueID: 1695664485
     locked: 0
   - name: Effects

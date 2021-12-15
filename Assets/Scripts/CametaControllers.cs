@@ -2,43 +2,42 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CametaControllers : MonoBehaviour
+public class CametaControllers : MonoBehaviour //Camera* :D
 {
+    public static CametaControllers instance;
 
-    [SerializeField] Transform target;
-    [SerializeField] Transform farBG, middleBG;
+    public Transform target;
+    public Transform farBG, middleBG;
 
-    [SerializeField] float minHeight,maxHeight;
+    public float minHeight,maxHeight;
+
+    public bool stopFollow;
     
-
-    /* private float lastXPos;
-    private float lastYPos; */
-
     private Vector2 lastPos;
 
-    // Start is called before the first frame update
+    private void Awake() 
+    {
+        instance = this;
+    }
+
     void Start()
     {
-        /*lastXPos = transform.position.x;
-        lastYPos = transform.position.y; */
         lastPos = transform.position;
     }
 
-    // Update is called once per frame
+
     void Update()
     {
-        moveCamera();
+        if(!stopFollow)
+        {
+            moveCamera();
 
-        moveBGandMiddleBG();
+            moveBGandMiddleBG();
+        }
     }
 
     private void moveCamera()
     {
-       /* transform.position = new Vector3(target.position.x, target.position.y, transform.position.z);
-
-        float clampedY = Mathf.Clamp(transform.position.y, minHeight, maxHeight);
-        transform.position = new Vector3(transform.position.x, clampedY, transform.position.z); */
-
         transform.position = new Vector3(target.position.x, Mathf.Clamp(target.position.y,minHeight, maxHeight), transform.position.z);
     }
 
