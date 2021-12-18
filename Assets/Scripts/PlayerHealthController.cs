@@ -11,7 +11,7 @@ public class PlayerHealthController : MonoBehaviour
     public float invincibleLength;
     public float invincibleCounter;
 
-    private SpriteRenderer playerSR;
+    private SpriteRenderer _playerSR;
 
     public GameObject deathEffect;
 
@@ -24,7 +24,7 @@ public class PlayerHealthController : MonoBehaviour
     {
         currentHealth = maxHealth;
 
-        playerSR = GetComponent<SpriteRenderer>();
+        _playerSR = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -36,7 +36,7 @@ public class PlayerHealthController : MonoBehaviour
             
             if(invincibleCounter <= 0)
             {
-                playerSR.color = new Color(playerSR.color.r, playerSR.color.g, playerSR.color.b, 1f);
+                _playerSR.color = new Color(_playerSR.color.r, _playerSR.color.g, _playerSR.color.b, 1f);
             }
         }
     }
@@ -61,7 +61,7 @@ public class PlayerHealthController : MonoBehaviour
             else
             {
                 invincibleCounter = invincibleLength;
-                playerSR.color = new Color(playerSR.color.r, playerSR.color.g, playerSR.color.b, .5f);
+                _playerSR.color = new Color(_playerSR.color.r, _playerSR.color.g, _playerSR.color.b, .5f);
 
                 PlayerController.instance.KnockBack();
 
