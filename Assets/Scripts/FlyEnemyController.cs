@@ -10,6 +10,13 @@ public class FlyEnemyController : MonoBehaviour
 
     public SpriteRenderer enemySR;
 
+    public float distanceToAtackPlayer, chaseSpeed;
+
+    private Vector3 attackTarget;
+
+    public float waitAfterAttack;
+    private float attackCounter;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -22,25 +29,54 @@ public class FlyEnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position, poins[currentPoint].position, moveSpeed * Time.deltaTime);
-
-        if(Vector3.Distance(transform.position, poins[currentPoint].position) < .05f)
+        if(attackCounter > 0)
         {
-            currentPoint++;
-
-            if(currentPoint >= poins.Length)
+            attackCounter -= Time.deltaTime;
+        }
+        else
+        {
+            if(Vector3.Distance(transform.position, PlayerController.instance.transform.position) > distanceToAtackPlayer)
             {
-                currentPoint = 0;
-            }
-        }
+                attackTarget = Vector3.zero;
 
-        if(transform.position.x < poins[currentPoint].position.x)
-        {
-            enemySR.flipX = true;
-        }
-        else if(transform.position.x > poins[currentPoint].position.x)
-        {
-            enemySR.flipX = false;
-        }
+                transform.position = Vector3.MoveTowards(transform.position, poins[currentPoint].position, moveSpeed * Time.deltaTime);
+
+                if(Vector3.Distance(transform.position, poins[currentPoint].position) < .05f)
+                {
+                    currentPoint++;
+
+                    if(currentPoint >= poins.Length)
+                    {
+                        currentPoint = 0;
+                    }
+                }
+
+                if(transform.position.x < poins[currentPoint].position.x)
+                {
+                    enemySR.flipX = true;
+                }
+                else if(transform.position.x > poins[currentPoint].position.x)
+                {
+                    enemySR.flipX = false;
+                }
+            }  
+            else
+            {
+                //Attack the Player
+                if(attackTarget == Vector3.zero)
+                {
+                    attackTarget = PlayerController.instance.transform.position;
+                }
+
+                transform.position = Vector3.MoveTowards(transform.position, attackTarget, chaseSpeed * Time.deltaTime);
+
+                if(Vector3.Distance(transform.position, attackTarget) <= .1f)
+                {
+                    
+                    attackCounter = waitAfterAttack;
+                    attackTarget = Vector3.zero;
+                }
+            } 
+        }    
     }
 }
