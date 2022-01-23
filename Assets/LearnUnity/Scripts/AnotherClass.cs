@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnotherClass : MonoBehaviour
+public class AnotherClass
 {
    public int apples;
     public int bananas;

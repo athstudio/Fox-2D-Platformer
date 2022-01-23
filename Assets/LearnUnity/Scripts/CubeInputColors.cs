@@ -15,8 +15,7 @@ public class CubeInputColors : MonoBehaviour
     public GameObject gameObj;
     
 
-    int numEnemies = 3;
-    int cupsInTheSink = 4;
+    
 
     float coffeeTemperature = 85.0f;
     float hotLimitTemperature = 70.0f;
@@ -32,38 +31,7 @@ public class CubeInputColors : MonoBehaviour
     {
         
         
-        // Цикл for----------------------------------
-         for(int i = 0; i < numEnemies; i++)
-        {
-           // Debug.Log("Creating enemy number: " + i);
-        }
-        // Цикл while---------------------------------
-         while(cupsInTheSink > 0)
-        {
-           // Debug.Log ("I've washed a cup!");
-            cupsInTheSink--;
-        }
-        // Цикл do while------------------------------
-         bool shouldContinue = false;
-        
-        do
-        {
-            //print ("Hello World");
-            
-        }
-        while(shouldContinue == true);
-
-        // Цикл foreach------------------------------- + Массив
-        string[] strings = new string[3];
-        
-        strings[0] = "First string";
-        strings[1] = "Second string";
-        strings[2] = "Third string";
-        
-        foreach(string item in strings)
-        {
-           // print (item);
-        }
+       
 
          alpha = 29;
         
@@ -107,14 +75,12 @@ public class CubeInputColors : MonoBehaviour
             Destroy(gameObj);
         }
 
-
         // Debug.Log("Update time :" + Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.Space))
             TemperatureTest();
         
         coffeeTemperature -= Time.deltaTime * 5f;
-
 
         if(Input.GetKey(KeyCode.Q))
         {
@@ -124,11 +90,7 @@ public class CubeInputColors : MonoBehaviour
 
             float speedY = 100f;
             
-            transform.Rotate(0,speedY * Time.deltaTime,0);
-            
-            
-            
-            
+            transform.Rotate(0,speedY * Time.deltaTime,0);  
         }
         if(Input.GetKey(KeyCode.W))
         {
@@ -139,8 +101,7 @@ public class CubeInputColors : MonoBehaviour
             float speedX = 100f;
             
             transform.Rotate(speedX * Time.deltaTime,0,0);
-            gameObject.SetActive(true);
-            
+            gameObject.SetActive(true);  
         }
         if(Input.GetKey(KeyCode.E))
         {
@@ -153,7 +114,6 @@ public class CubeInputColors : MonoBehaviour
 
             transform.Rotate(0,0,speedZ * Time.deltaTime);
             gameObject.SetActive(true);
-            
         }
         if(Input.GetKey(KeyCode.R))
         {

@@ -6,34 +6,17 @@ public class CubeSpawner : MonoBehaviour
 {
     public GameObject cubePrefabVar;
     public List<GameObject> gameObjectsList;
+
     public float scalingFactor = 0.95f;
+
     public int numCubes = 0;
 
 
-   
-    //GameObject gObj = new GameObject("MyGO");
-
-    
-    // Start is called before the first frame update
     void Start()
     {
         gameObjectsList = new List<GameObject>();
-
-
-        //Instantiate(cubePrefabVar);
-       
-        //print(gObj.name);
-        //Transform trans = gObj.transform; // сокращение Transform trans2 = GetComponent<Transform>(); 
-        
-        print(20 > 10); // оператор больше, возвращает true если значение слева БОЛЬШЕ правого.
-
-        print(10 < 20); // оператор меньше, вовращает true если значение слева МЕНЬШЕ правого.
-        
-        print(10 >= 10); // true 
-        print(10 <= 10); //true
     }
 
-    // Update is called once per frame
     void Update()
     {
         numCubes++;

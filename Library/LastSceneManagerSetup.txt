@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/LearnUnity/Scenes/InputCube.unity
+- path: Assets/LearnUnity/Scenes/Function Examples.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
