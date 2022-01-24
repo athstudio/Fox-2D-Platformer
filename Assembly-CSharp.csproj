@@ -104,6 +104,10 @@
     <Compile Include="Assets\LearnUnity\Scripts\CountltHigher.cs" />
     <Compile Include="Assets\LearnUnity\Scripts\MoveAlong.cs" />
     <Compile Include="Assets\LearnUnity\Scripts\EnemyZig.cs" />
+    <Compile Include="Assets\LearnUnity\Scripts\BoidsScena\Attractor.cs" />
+    <Compile Include="Assets\LearnUnity\Scripts\BoidsScena\LookAtAttractor.cs" />
+    <Compile Include="Assets\LearnUnity\Scripts\BoidsScena\Boid.cs" />
+    <Compile Include="Assets\LearnUnity\Scripts\BoidsScena\Spawner.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
