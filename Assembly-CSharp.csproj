@@ -8,9 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
-    <ProjectGuid>{97C0003A-61D9-DC91-4D90-BF3E36337473}</ProjectGuid>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{3A00C097-D961-91DC-4D90-BF3E36337473}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -73,6 +72,7 @@
     <Compile Include="Assets\LearnUnity\Scripts\DistionaryEX.cs" />
     <Compile Include="Assets\LearnUnity\Scripts\Array2dEX.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\LearnUnity\Scripts\CodeExample.cs" />
     <Compile Include="Assets\Scripts\LSUIController.cs" />
     <Compile Include="Assets\Scripts\UIController.cs" />
     <Compile Include="Assets\Scripts\Slammer.cs" />
@@ -87,6 +87,7 @@
     <Compile Include="Assets\LearnUnity\Scripts\CubeInputColors.cs" />
     <Compile Include="Assets\Scripts\DestroyOverTime.cs" />
     <Compile Include="Assets\Scripts\EnemyController.cs" />
+    <Compile Include="Assets\LearnUnity\Scripts\CubeSpawner2.cs" />
     <Compile Include="Assets\Scripts\Switch.cs" />
     <Compile Include="Assets\Scripts\LSPlayer.cs" />
     <Compile Include="Assets\Scripts\CametaControllers.cs" />
@@ -99,8 +100,10 @@
     <Compile Include="Assets\Scripts\StompBpx.cs" />
     <Compile Include="Assets\LearnUnity\Scripts\KeyInput.cs" />
     <Compile Include="Assets\Scripts\DamagePlayer.cs" />
-    <Compile Include="Assets\LearnUnity\Scripts\CodeExample.cs" />
-    <Compile Include="Assets\LearnUnity\Scripts\CubeSpawner2.cs" />
+    <Compile Include="Assets\LearnUnity\Scripts\Enemy.cs" />
+    <Compile Include="Assets\LearnUnity\Scripts\CountltHigher.cs" />
+    <Compile Include="Assets\LearnUnity\Scripts\MoveAlong.cs" />
+    <Compile Include="Assets\LearnUnity\Scripts\EnemyZig.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
