@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Apple : MonoBehaviour
 {
+    [Header("Set in Inspector")]
     public static float bottomY = -20f;
    
     void Update()
@@ -13,7 +14,8 @@ public class Apple : MonoBehaviour
 
     // Создадим медот, который получает ссылку на компонент АплПикер главное камеры  
     void FindApplePicker()
-    {
+    {   
+        // Получить ссылку на компонент эплПикер главной камеры Мейн Камера
         ApplePicker apScript = Camera.main.GetComponent<ApplePicker>();
         // Вызовем общедоступный метод из АплПикер AppleDestroed()
         apScript.AppleDestroed();

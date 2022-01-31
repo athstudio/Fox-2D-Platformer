@@ -38,7 +38,7 @@ public class ApplePicker : MonoBehaviour
     {
         // Удалить все упавшие яблоки
         GameObject[] tAppleArray = GameObject.FindGameObjectsWithTag("Apple"); // Создадим массив, который будет возвращать
-                                                                               //все объекты с тэгом Апл.
+                                                                              //все объекты с тэгом Апл.
         foreach (GameObject tGO in tAppleArray)
         {
             Destroy(tGO);
@@ -52,6 +52,13 @@ public class ApplePicker : MonoBehaviour
         // Исключить корзину из списка и удалить сам игровой объект
         basketList.RemoveAt(basketIndex);
         Destroy(tBasketGO);
+
+
+        // Если корзин не осталось, перезапустить игру.
+        if(basketList.Count == 0)
+        {
+            SceneManager.LoadScene("Apple Picker");
+        }
     }
 
 }

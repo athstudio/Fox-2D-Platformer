@@ -5,9 +5,10 @@ using UnityEngine.UI;
 
 public class Basket : MonoBehaviour
 {
+    [Header("Set Dynamically")]
     public Text scoreGT;
 
-    private void Start()
+    void Start()
     {
         // Получить ссылку на игровой объект ScoreCounter
         GameObject scoreGO = GameObject.Find("ScoreCounter"); // Отыскивает игровой объект в ирархии с именем - ScoreCounter.
@@ -34,22 +35,6 @@ public class Basket : MonoBehaviour
         Vector3 pos = this.transform.position;
         pos.x = mousePos3D.x;
         this.transform.position = pos;
-
-        /*
-        float translation = Input.GetAxis("Horizontal") * speedBasketX;
-        translation *= Time.deltaTime;
-        transform.Translate(-translation, 0, 0);
-        
-        
-        if (Input.GetKey(KeyCode.A))
-        {
-            transform.Translate(speedBasketX * Time.deltaTime, 0, 0);
-        }
-        else if(Input.GetKey(KeyCode.D))
-        {
-            transform.Translate(-speedBasketX * Time.deltaTime, 0, 0);
-        }
-        */
     }
 
     void ScoreGT()
@@ -60,12 +45,18 @@ public class Basket : MonoBehaviour
         score += 100;
         // Преобразовать число очков обратно в строку и вывести на экран
         scoreGT.text = score.ToString();
+
+        // Запомнить высшее достижение 
+        if(score < HighScore.score)
+        {
+            HighScore.score = score;
+        }
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D coll)
     {
         //При соприкосновением с корзиной, игровые объкты будут удаляться.
-        GameObject collidedWith = collision.gameObject;
+        GameObject collidedWith = coll.gameObject;
         if(collidedWith.CompareTag("Apple"))
         {
             Destroy(collidedWith);

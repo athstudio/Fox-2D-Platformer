@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class AppleTree : MonoBehaviour
 {
-    public static float bottomY = -20f;
+    public static float bottomY = -20f; //-----------------------------------------------------------------
 
     public GameObject applePrefab;
 
     // Скорость яблони.
-    public float treeSpeed; 
+    public float treeSpeed = 1f; 
   
     // Расстояние, на котором должно изменяться направление движения яблони.
     public float leftAndRightEdge = 15f;
@@ -36,7 +36,7 @@ public class AppleTree : MonoBehaviour
         ChangeOfDirection();
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
         // Добавляем метот рандома в фиксапдейт, для более точной фиксации рандома 50 кадров в секунду.
         RandomChangeOfDirection();
