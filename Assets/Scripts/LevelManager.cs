@@ -37,6 +37,15 @@ public class LevelManager : MonoBehaviour
         StartCoroutine(RespawnCo());
     }
 
+    public void RespawnBtn()
+    {
+        PauseMenu.instance.PauseUnpause();
+
+        PlayerController.instance.transform.position = CheckPointController.instance.spawnPoint;
+
+        PlayerHealthController.instance.currentHealth = PlayerHealthController.instance.maxHealth;
+    }
+
     private IEnumerator RespawnCo()
     {
         PlayerController.instance.gameObject.SetActive(false);
