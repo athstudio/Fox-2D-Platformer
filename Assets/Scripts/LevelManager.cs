@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager instance;
+    public static LevelManager instance; //TODO
 
     public float waitToRespawn;
 

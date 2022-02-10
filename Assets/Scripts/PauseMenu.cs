@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class PauseMenu : MonoBehaviour
 {
     public static PauseMenu instance;
-    public string levelSelect, mainMenu;
+    public string levelSelect, mainMenu;//TODO
 
     public GameObject pauseScreen;
     public bool isPaused;
