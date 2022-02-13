@@ -198,6 +198,7 @@
     <Compile Include="Assets\I2\Localization\Scripts\Configurables\PersistentStorage.cs" />
     <Compile Include="Assets\LearnUnity\Scenes\Scene Boids\Scripts\KeyInput.cs" />
     <Compile Include="Assets\Scripts\DamagePlayer.cs" />
+    <Compile Include="Assets\LearnUnity\Scenes\2 Prototipe Game\Scripts\FollowCam.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
